@@ -9,7 +9,7 @@ DESCRIPTION="Sarasa Term SC with Nerd Font patches"
 
 HOMEPAGE="https://github.com/be5invis/Sarasa-Gothic"
 
-NERD_VERSION="3.2.0"
+NERD_VERSION="3.2.1"
 SRC_URI="
 	https://github.com/be5invis/Sarasa-Gothic/releases/download/v${PV}/Sarasa-TTF-${PV}.7z -> ${P}.7z
 	https://github.com/ryanoasis/nerd-fonts/releases/download/v${NERD_VERSION}/FontPatcher.zip
