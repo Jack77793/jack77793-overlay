@@ -20,6 +20,11 @@ RDEPEND="
 
 extension_uuid="desktop-lyric@tuberry"
 
+src_configure() {
+	emesonargs=("-Dtarget=system")
+	meson_src_configure
+}
+
 src_prepare() {
 	default
 	echo -e "#!/usr/bin/env bash\necho \"45.0\"" > ${S}/cli/get-version.sh
