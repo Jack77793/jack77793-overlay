@@ -9,7 +9,7 @@ HOMEPAGE="https://github.com/tuberry/desktop-lyric"
 SRC_URI="https://github.com/tuberry/desktop-lyric/archive/${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/desktop-lyric-${PV}"
 
-LICENSE="gpl-3.0"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
