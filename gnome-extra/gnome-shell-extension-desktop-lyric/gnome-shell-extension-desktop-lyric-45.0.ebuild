@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit gnome2-utils
+inherit gnome2-utils meson
 
 DESCRIPTION="The most popular clipboard manager for GNOME, with over 1M downloads"
 HOMEPAGE="https://github.com/tuberry/desktop-lyric"
@@ -14,18 +14,23 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-libs/glib:2
 	app-eselect/eselect-gnome-shell-extensions
 	=gnome-base/gnome-shell-${PV%.*}*
 "
 
 extension_uuid="desktop-lyric@tuberry"
 
+src_prepare() {
+	default
+	echo -e "#!/usr/bin/env bash\necho \"45.0\"" > ${S}/cli/get-version.sh
+}
+
 src_install() {
 	einstalldocs
-	rm -f README.md LICENSE.md || die
+	rm -f README.md LICENSE || die
 	insinto /usr/share/glib-2.0/schemas
 	insinto /usr/share/gnome-shell/extensions/"${extension_uuid}"
+	rm -rf schemas
 	doins -r *
 }
 
