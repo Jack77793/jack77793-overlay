@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-libs/glib:2
 	app-eselect/eselect-gnome-shell-extensions
-	=gnome-base/gnome-shell-45
+	=gnome-base/gnome-shell-${PV%.*}*
 "
 
 extension_uuid="desktop-lyric@tuberry"
