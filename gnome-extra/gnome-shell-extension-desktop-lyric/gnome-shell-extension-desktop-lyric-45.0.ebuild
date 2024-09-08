@@ -26,12 +26,8 @@ src_prepare() {
 }
 
 src_install() {
-	einstalldocs
-	rm -f README.md LICENSE || die
-	insinto /usr/share/glib-2.0/schemas
-	insinto /usr/share/gnome-shell/extensions/"${extension_uuid}"
-	rm -rf schemas
-	doins -r *
+	meson_src_install
+	rm "${ED}"/usr/share/glib-2.0/schemas/gschemas.compiled || die
 }
 
 pkg_preinst() {
