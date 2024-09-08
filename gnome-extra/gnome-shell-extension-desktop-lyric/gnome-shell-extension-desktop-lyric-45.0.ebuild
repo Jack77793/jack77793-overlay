@@ -25,11 +25,6 @@ src_prepare() {
 	echo -e "#!/usr/bin/env bash\necho \"45.0\"" > ${S}/cli/get-version.sh
 }
 
-src_install() {
-	meson_src_install
-	rm "${ED}"/usr/share/glib-2.0/schemas/gschemas.compiled || die
-}
-
 pkg_preinst() {
 	gnome2_schemas_savelist
 }
