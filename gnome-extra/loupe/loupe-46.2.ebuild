@@ -27,7 +27,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
-	>=virtual/rust-1.70.0
 	x11-libs/gdk-pixbuf
 	virtual/pkgconfig
 "
