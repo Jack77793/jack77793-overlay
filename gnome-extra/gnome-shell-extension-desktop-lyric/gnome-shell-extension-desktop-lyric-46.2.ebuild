@@ -4,7 +4,7 @@
 EAPI=8
 inherit gnome2-utils meson
 
-DESCRIPTION="The most popular clipboard manager for GNOME, with over 1M downloads"
+DESCRIPTION="Show the lyric of playing songs on the desktop."
 HOMEPAGE="https://github.com/tuberry/desktop-lyric"
 SRC_URI="https://github.com/tuberry/desktop-lyric/archive/${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/desktop-lyric-${PV}"
