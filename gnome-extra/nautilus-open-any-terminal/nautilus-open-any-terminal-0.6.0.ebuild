@@ -27,11 +27,12 @@ src_configure() {
 }
 
 src_compile() {
-	make
+	make || die "make failed"
 }
 
 src_install() {
-	make DESTDIR="${WORKDIR}" PREFIX="/usr" install-nautilus schema
+	make DESTDIR="${D}" PREFIX="/usr" install-nautilus schema
+	einstalldocs
 }
 
 pkg_postinst() {
