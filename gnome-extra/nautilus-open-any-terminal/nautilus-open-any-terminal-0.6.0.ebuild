@@ -40,7 +40,7 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
-	make uninstall schema
+	make DESTDIR="${D}" PREFIX="/usr" uninstall schema
 }
 
 pkg_postrm() {
