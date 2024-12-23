@@ -31,7 +31,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" PREFIX="/usr" install-nautilus schema
+	make DESTDIR="${D}" PREFIX="/usr" install-nautilus
 	einstalldocs
 }
 
@@ -40,7 +40,7 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
-	make DESTDIR="${D}" PREFIX="/usr" uninstall schema
+	make DESTDIR="${D}" PREFIX="/usr" uninstall
 }
 
 pkg_postrm() {
