@@ -6,7 +6,7 @@ EAPI=8
 inherit cargo gnome2 meson xdg
 
 DESCRIPTION="An image viewer application written with GTK 4, Libadwaita and Rust."
-HOMEPAGE="https://apps.gnome.org/Loupe/ https://gitlab.gnome.org/GNOME/loupe"
+HOMEPAGE="https://apps.gnome.org/Loupe https://gitlab.gnome.org/GNOME/loupe"
 
 LICENSE="GPL-3+"
 # Dependent crate licenses
@@ -19,8 +19,8 @@ KEYWORDS="~amd64"
 IUSE="X"
 
 RDEPEND="
-	>=gui-libs/gtk-4.11.3[X?]
-	>=gui-libs/libadwaita-1.4_alpha
+	>=gui-libs/gtk-4.15.3[X?]
+	>=gui-libs/libadwaita-1.6_beta
 	>=dev-libs/libgweather-4.0.0
 	>=media-libs/lcms-2.12.0
 	>=media-libs/glycin-loaders-1.0_beta
@@ -41,13 +41,9 @@ src_configure() {
 }
 
 pkg_postinst() {
-	xdg_pkg_postinst
 	gnome2_schemas_update
-	xdg_icon_cache_update
 }
 
 pkg_postrm() {
-	xdg_pkg_postrm
 	gnome2_schemas_update
-	xdg_icon_cache_update
 }
