@@ -4,10 +4,12 @@
 EAPI=8
 inherit gnome2-utils
 
+EXTENSION_VERSION="65"
+
 DESCRIPTION="The most popular clipboard manager for GNOME, with over 1M downloads"
 HOMEPAGE="https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator"
-SRC_URI="https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator/archive/gnome${PV}.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/${PN}-gnome${PV}"
+SRC_URI="https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v${EXTENSION_VERSION}.shell-extension.zip -> ${P}.zip"
+S="${WORKDIR}"
 
 LICENSE="MIT"
 SLOT="0"
@@ -16,7 +18,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-libs/glib:2
 	app-eselect/eselect-gnome-shell-extensions
-	=gnome-base/gnome-shell-${PV}*
+	=gnome-base/gnome-shell-${PV%.*}*
 "
 
 extension_uuid="clipboard-indicator@tudmotu.com"
