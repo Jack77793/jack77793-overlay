@@ -6,8 +6,8 @@ inherit gnome2-utils meson
 
 DESCRIPTION="Show the lyric of playing songs on the desktop."
 HOMEPAGE="https://github.com/tuberry/desktop-lyric"
-SRC_URI="https://github.com/tuberry/desktop-lyric/archive/${PV}.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/desktop-lyric-${PV}"
+SRC_URI="https://github.com/tuberry/desktop-lyric/archive/${PV}.beta.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/desktop-lyric-${PV}.beta"
 
 LICENSE="GPL-3"
 SLOT="0"
