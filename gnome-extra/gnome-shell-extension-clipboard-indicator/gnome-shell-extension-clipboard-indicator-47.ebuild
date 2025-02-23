@@ -24,13 +24,7 @@ RDEPEND="
 extension_uuid="clipboard-indicator@tudmotu.com"
 
 src_install() {
-	einstalldocs
-	rm -f README.md LICENSE || die
-	insinto /usr/share/glib-2.0/schemas
-	doins schemas/*.xml
-	rm -rf schemas
-	insinto /usr/share/gnome-shell/extensions/"${extension_uuid}"
-	doins -r *
+	doins -r ${extension_uuid}
 }
 
 pkg_preinst() {
