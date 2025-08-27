@@ -24,7 +24,9 @@ RDEPEND="
 extension_uuid="clipboard-indicator@tudmotu.com"
 
 src_install() {
-	doins -r ${extension_uuid}
+	gnome2_schemas_savelist
+	insinto /usr/share/gnome-shell/extensions/${extension_uuid}
+	doins -r *
 }
 
 pkg_preinst() {
