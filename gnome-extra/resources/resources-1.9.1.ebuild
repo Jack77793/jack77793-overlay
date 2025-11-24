@@ -236,6 +236,7 @@ BDEPEND="
 
 src_configure () {
 	cargo_gen_config
+	local emesonargs=("-Dprofile=default")
 	meson_src_configure
 	ln -s "${CARGO_HOME}" "${BUILD_DIR}/cargo" || die
 }
