@@ -247,3 +247,11 @@ src_compile () {
 	export CARGO_PROFILE_RELEASE_STRIP=false
 	meson_src_compile
 }
+
+pkg_postinst () {
+	gnome2_schemas_update
+}
+
+pkg_postrm () {
+	gnome2_schemas_update
+}
