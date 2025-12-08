@@ -208,7 +208,7 @@ CRATES="
 	yansi@1.0.1
 "
 
-inherit cargo gnome2 gnome2-utils meson xdg
+inherit cargo gnome2-utils meson xdg
 
 DESCRIPTION="Keep an eye on system resources"
 HOMEPAGE="https://github.com/nokyan/resources"
@@ -216,23 +216,22 @@ SRC_URI="https://github.com/nokyan/resources/archive/v${PV}.tar.gz -> ${P}.tar.g
 SRC_URI+=" ${CARGO_CRATE_URIS}"
 
 LICENSE="GPL-3+"
+# Dependent crate licenses
 LICENSE+="
 	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 ISC MIT
 	Unicode-3.0
 "
 SLOT="0"
 KEYWORDS="~amd64"
+RUST_MIN_VER="1.85.0"
 
 RDEPEND="
-	sys-apps/systemd
 	sys-auth/polkit
-"
-DEPEND="${RDEPEND}"
-BDEPEND="
 	dev-libs/glib
 	gui-libs/gtk
 	>=gui-libs/libadwaita-1.8.2
 "
+DEPEND="${RDEPEND}"
 
 src_configure () {
 	cargo_gen_config
@@ -242,7 +241,6 @@ src_configure () {
 }
 
 src_compile () {
-	export CARGO_NET_OFFLINE=true
 	export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 	export CARGO_PROFILE_RELEASE_DEBUG=2
 	export CARGO_PROFILE_RELEASE_STRIP=false
@@ -250,9 +248,11 @@ src_compile () {
 }
 
 pkg_postinst () {
+	xdg_pkg_postinst
 	gnome2_schemas_update
 }
 
 pkg_postrm () {
+	xdg_pkg_postrm
 	gnome2_schemas_update
 }
