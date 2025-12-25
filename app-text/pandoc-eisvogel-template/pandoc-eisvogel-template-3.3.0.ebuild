@@ -12,7 +12,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="app-text/pandoc"
+RDEPEND="app-text/pandoc-bin"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
