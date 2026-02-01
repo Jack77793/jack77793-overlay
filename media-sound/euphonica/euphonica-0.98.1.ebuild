@@ -562,13 +562,15 @@ declare -A GIT_CRATES=(
 	[mpd]='https://github.com/htkhiem/rust-mpd;f09e9d8ffd4a3316a4e9a3d84f9ef6a1d7adc483;rust-mpd-%commit%'
 )
 
+RUST_MIN_VER="1.88.0"
+
 inherit cargo meson gnome2-utils xdg
 
 DESCRIPTION="An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita."
 HOMEPAGE="https://github.com/htkhiem/euphonica"
-SRC_URI="https://github.com/htkhiem/euphonica/archive/v${PV}-beta.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/htkhiem/euphonica/archive/v${PV}-beta.1.tar.gz -> ${P}.tar.gz"
 SRC_URI+=" ${CARGO_CRATE_URIS}"
-S="${WORKDIR}/${P}-beta"
+S="${WORKDIR}/${P}-beta.1"
 
 LICENSE="GPL-3+"
 # Dependent crate licenses
@@ -578,7 +580,6 @@ LICENSE+="
 "
 SLOT="0"
 KEYWORDS="~amd64"
-RUST_MIN_VER="1.88.0"
 
 RDEPEND="
 	>=gui-libs/gtk-4.18
@@ -600,7 +601,6 @@ src_unpack() {
 
 src_configure () {
 	cargo_gen_config
-	local emesonargs=("-Dbuildtype=release")
 	meson_src_configure
 	ln -s "${CARGO_HOME}" "${BUILD_DIR}/cargo-home" || die
 }
