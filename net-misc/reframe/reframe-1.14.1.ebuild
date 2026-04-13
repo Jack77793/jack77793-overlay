@@ -20,6 +20,8 @@ KEYWORDS="~amd64"
 IUSE="neatvnc"
 
 RDEPEND="
+	acct-user/reframe
+	acct-group/reframe
 	dev-libs/glib:2
 	gui-libs/gtk:4
 	x11-libs/libdrm
