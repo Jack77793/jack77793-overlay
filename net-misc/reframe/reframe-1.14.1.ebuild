@@ -59,5 +59,4 @@ src_configure() {
 
 pkg_postinst() {
 	tmpfiles_process reframe-tmpfiles.conf
-	default_pkg_postinst
 }
