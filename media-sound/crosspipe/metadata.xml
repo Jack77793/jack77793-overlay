@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <longdescription lang="en">
+        A visual graph manager for PipeWire, built with GTK4/Libadwaita and Vala, following the GNOME HIG.
+    </longdescription>
+    <upstream>
+        <remote-id type="github">dp0sk/Crosspipe</remote-id>
+    </upstream>
+</pkgmetadata>
