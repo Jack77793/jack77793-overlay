@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		Kernel module for driving ITE Super I/O chips typically found on Gigabyte motherboards.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">frankcrawford/it87</remote-id>
+	</upstream>
+</pkgmetadata>
